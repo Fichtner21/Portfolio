@@ -1,8 +1,8 @@
 # __Sass i RWD egzamin__
 
-## Rozwiązuj zadania w pliku __sass/style.scss__ a wynik kompilacji tego pliku zapisz do pliku __css/style.css__ - nie zmieniaj ułożenia folderów i plików!
+### Rozwiązuj zadania w pliku __sass/style.scss__ a wynik kompilacji tego pliku zapisz do pliku __css/style.css__ - nie zmieniaj ułożenia folderów i plików!
 
-## Pamiętaj, że zadanie jest __niezaliczone__ jeżeli nie zastosujesz się do poleceń!
+### Pamiętaj, że zadanie jest __niezaliczone__ jeżeli nie zastosujesz się do poleceń!
 
 1. Zdefiniuj za pomocą Sass mapę o nazwie ```rainbow```, która będzie miała w sobie __7 par klucz-wartość__ a każda wartość odpowiada innemu kolorowi tęczy. Użyj kolorów podanych poniżej:
 
