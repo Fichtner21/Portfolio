@@ -25,9 +25,12 @@ Tęcza powinna mieścić się idealnie wewnątrz okna przeglądarki.
 Otrzymasz dodatkowe punkty za zastosowanie mapy z __Zadania 1__ oraz grida z __Zadania 2__.
 
 5. Napisz mixin o nazwie ```changeColors```, który przyjmuje jeden parametr - __kolor__. Po wywołaniu mixin dodaje do elementu dwie rzeczy:
-kolor podany jako paramter ustawia jako background-color oraz dodaje do elementu pseudoklasę hover taką, że po najechaniu myszką, kolor tła staje sie jaśniejszy o 50%. Wywołaj ten mixin wewnątrz elementu o klasie ```section-2``` używając koloru ```#000000```.
+kolor podany jako parametr ustawia jako ```background-color``` oraz dodaje do elementu pseudoklasę ```hover``` taką, że po najechaniu myszką, kolor tła staje sie jaśniejszy o 50%. Wywołaj ten mixin wewnątrz elementu o klasie ```section-2``` używając koloru ```#000000``` jako parametru.
 
 6. W sekcji o klasie ```section-3``` znajduje się obrazek. Ustaw tej sekcji ```1000px``` wysokości. Następnie opisz odpowiednie warunki tak aby:
-    1. Gdy ekran ma ```1025px``` lub więcej obraz miał ```400px``` szerokości i był idealnie na środku sekcji;
-    2. Gdy ekran ma ```768px``` lub więcej ale mniej lub równo ```1024px``` to obrazek miał ```500px``` szerokości i był w prawym górnym rogu sekcji;
-    3. Gdy ekran ma ```767px``` lub mniej to obrazek ma całą dostępną szerokość sekcji.
+    1. Gdy ekran ma ```1025px``` szerokości lub więcej obraz miał ```400px``` szerokości i był idealnie na środku sekcji;
+    2. Gdy ekran ma między ```768px``` a ```1024px``` szerokości (włączając w to wymienione wartości) to obrazek miał ```500px``` szerokości i był w prawym górnym rogu sekcji;
+    3. Gdy ekran ma ```767px``` szerokości lub mniej to obrazek ma całą dostępną szerokość sekcji.
+
+
+Otrzymasz dodatkowy punkt gdy użyjesz podejścia ```mobile-first```.
