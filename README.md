@@ -1,8 +1,8 @@
 # __Sass i RWD egzamin__
 
-### Rozwiązuj zadania w pliku __sass/style.scss__ a wynik kompilacji tego pliku zapisz do pliku __css/style.css__ - nie zmieniaj ułożenia folderów i plików!
+### Rozwiązuj zadania w pliku __sass/style.scss__ a wynik kompilacji tego pliku zapisz do pliku __css/style.css__ - nie zmieniaj ułożenia folderów i plików! :boom: :boom: :boom:
 
-### Pamiętaj, że zadanie jest __niezaliczone__ jeżeli nie zastosujesz się do poleceń!
+### Pamiętaj, że zadanie jest __niezaliczone__ jeżeli nie zastosujesz się do poleceń! :bomb: :bomb: :bomb:
 
 1. Zdefiniuj za pomocą Sass mapę o nazwie ```rainbow```, która będzie miała w sobie __7 par klucz-wartość__ a każda wartość odpowiada innemu kolorowi tęczy. Użyj kolorów podanych poniżej:
 
@@ -28,9 +28,11 @@ Otrzymasz dodatkowe punkty za zastosowanie mapy z __Zadania 1__ oraz grida z __Z
 kolor podany jako parametr ustawia jako ```background-color``` oraz dodaje do elementu pseudoklasę ```hover``` taką, że po najechaniu myszką, kolor tła staje sie jaśniejszy o 50%. Wywołaj ten mixin wewnątrz elementu o klasie ```section-2``` używając koloru ```#000000``` jako parametru.
 
 6. W sekcji o klasie ```section-3``` znajduje się obrazek. Ustaw tej sekcji ```1000px``` wysokości. Następnie opisz odpowiednie warunki tak aby:
-    1. Gdy ekran ma ```1025px``` szerokości lub więcej obraz miał ```400px``` szerokości i był idealnie na środku sekcji;
-    2. Gdy ekran ma między ```768px``` a ```1024px``` szerokości (włączając w to wymienione wartości) to obrazek miał ```500px``` szerokości i był w prawym górnym rogu sekcji;
-    3. Gdy ekran ma ```767px``` szerokości lub mniej to obrazek ma całą dostępną szerokość sekcji.
+    * Gdy ekran ma ```1025px``` szerokości lub więcej obraz miał ```400px``` szerokości i był idealnie na środku sekcji;
+    * Gdy ekran ma między ```768px``` a ```1024px``` szerokości (włączając w to wymienione wartości) to obrazek miał ```500px``` szerokości i był w prawym górnym rogu sekcji;
+    * Gdy ekran ma ```767px``` szerokości lub mniej to obrazek ma całą dostępną szerokość sekcji.
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Otrzymasz dodatkowy punkt gdy użyjesz podejścia ```mobile-first```.
+
+## __Powodzenia!__ :star: :smile: :+1:
