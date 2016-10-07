@@ -11,17 +11,23 @@
     - Żółty: ```#FFFF00```
     - Zielony: ```#00FF00```
     - Niebieski: ```#0000FF```
-    - Indygo: ```4B0082```
-    - Fioletowy: ```#8B00FF```
+    - Indygo: ```#4B0082```
+    - Fioletowy: ```#8F00FF```
 
-2. __Przy pomocy Sassa__ utwórz wszystkie klasy potrzebne aby zrobić swój własny grid. Zakładamy, że grid przyjmuje układ 7-kolumnowy. Klasy związane z szerokością elementu nazwij ```.col-X``` - na przykład ```.col-1```, ```.col-2``` ... ```.col-7```.
-Nie zapominaj o klasach ```row``` oraz ```clearfix```.
+2. __Przy pomocy Sassa__ utwórz wszystkie klasy potrzebne aby zrobić swój własny grid. Zakładamy, że grid przyjmuje układ 7-kolumnowy oraz główny kontener posiada ```1000px``` szerokości. Klasy związane z szerokością elementu nazwij ```.col-X``` - na przykład ```.col-1```, ```.col-2``` ... ```.col-7```.
+Nie zapominaj o klasach ```container``` oraz ```row```.
 
 3. Do elementów ```section``` znajdujących się w pliku index.html dopisz taki kod, aby wszystkie sekcje zajmowały __całą wysokość i całą szerokość__ okna przeglądarki.
 
-4. W sekcji o klasie ```section-1``` wykorzystaj swój grid aby stworzyć tęczę. Tęcza docelowo powinna składać się z 7 różnych kolumn o takiej samej szerokości a razem powinny zajmować 100% szerokości ekranu. Kolumny posiadać 100% dostępnej wysokości. Ustaw kolumnom (od lewej do prawej) __kolory w takiej kolejności, w jakiej są podane w Zadaniu 1__. Wykorzystaj wcześniej stworzoną mapę.
+4. W sekcji o klasie ```section-1``` stwórz tęczę jak na załączonym obrazku poniżej:
+![Rainbow Image](./img/rainbow.png)
+Tęcza powinna mieścić się idealnie wewnątrz okna przeglądarki.
+Otrzymasz dodatkowe punkty za zastosowanie mapy z __Zadania 1__ oraz grida z __Zadania 2__.
 
-5. Napisz mixin, który przyjmuje jeden parametr - __kolor__. Po wywołaniu mixin dodaje do elementu dwie rzeczy:
+5. Napisz mixin o nazwie ```changeColors```, który przyjmuje jeden parametr - __kolor__. Po wywołaniu mixin dodaje do elementu dwie rzeczy:
 kolor podany jako paramter ustawia jako background-color oraz dodaje do elementu pseudoklasę hover taką, że po najechaniu myszką, kolor tła staje sie jaśniejszy o 50%. Wywołaj ten mixin wewnątrz elementu o klasie ```section-2``` używając koloru ```#000000```.
 
-6. Dopisz odpowiednią regułę do kolumn z __Zadania 4__ tak, aby każda kolumna zajmowała __100% szerokości oraz 400px wysokości__ gdy szerokość urządzenia jest mniejsza lub równa __768px__.
+6. W sekcji o klasie ```section-3``` znajduje się obrazek. Ustaw tej sekcji ```1000px``` wysokości. Następnie opisz odpowiednie warunki tak aby:
+    1. Gdy ekran ma ```1025px``` lub więcej obraz miał ```400px``` szerokości i był idealnie na środku sekcji;
+    2. Gdy ekran ma ```768px``` lub więcej ale mniej lub równo ```1024px``` to obrazek miał ```500px``` szerokości i był w prawym górnym rogu sekcji;
+    3. Gdy ekran ma ```767px``` lub mniej to obrazek ma całą dostępną szerokość sekcji.
