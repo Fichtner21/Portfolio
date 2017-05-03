@@ -71,3 +71,4 @@ kolor podany jako parametr ustawia jako ```background-color``` oraz dodaje do el
 Otrzymasz dodatkowy punkt gdy użyjesz podejścia ```mobile-first```.
 
 ## __Powodzenia!__ :star: :smile: :+1:
+# Portfolio
