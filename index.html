@@ -23,7 +23,7 @@
 </head>
 <body>
   <a href="#" class="scrollup"></a>
-  <a href="mailto:ernest.fichtner@gmail.com" title="ernest.fichtner@gmail.com" class="sendme aTooltip">NAPISZ DO MNIE!</a>
+  <a href="mailto:ernest.fichtner@gmail.com" title="ernest.fichtner@gmail.com" class="sendme">NAPISZ DO MNIE!</a>
   <section class="module parallax parallax-1">
 
     <div id="mySidenav" class="sidenav">
@@ -68,15 +68,33 @@
   </section>
 
   <section class="module content">
-    <div class="container">
+    <div class="container skillsBar">
       <h2>Umiejętności</h2>
       <div class="skills1">
-        <p>PHP/WordPress</p>
-        <p>JavaScript/jQuery</p>
-        <p>HTML5</p>
-        <p>CSS3</p>
-        <p>SASS</p>
-        <p>Responsive Web Design</p>
+        <p class="changeBar" data-width="30%" data-color="blue" data-nr="1">PHP/WordPress</p>
+          <div id="bar1" class="progress-bar">
+            <span></span>
+          </div>
+        <p class="changeBar" data-width="50%" data-color="blue" data-nr="2">JavaScript/jQuery</p>
+          <div id="bar2" class="progress-bar">
+            <span></span>
+          </div>
+        <p class="changeBar" data-width="80%" data-color="blue" data-nr="3">HTML5</p>
+          <div id="bar3" class="progress-bar">
+            <span></span>
+          </div>
+        <p class="changeBar" data-width="80%" data-color="blue" data-nr="4">CSS3</p>
+          <div id="bar4" class="progress-bar">
+            <span></span>
+          </div>
+        <p class="changeBar" data-width="80%" data-color="blue" data-nr="5">SASS</p>
+          <div id="bar5" class="progress-bar">
+            <span></span>
+          </div>
+        <p class="changeBar" data-width="60%" data-color="blue" data-nr="6">Responsive Web Design<span class="encion"> &#10162;</p>
+          <div id="bar6" class="progress-bar">
+            <span></span>
+          </div>
       </div>
     </div>
 
@@ -97,10 +115,38 @@
     </div>
   </div>
   </section>
-  <section class="module content hash">
-    <div class="container hash">
+  <section class="module content hash hashborder">
+    <div class="tri"></div>
+    <div class="container hash2">
       <h2>#webdev #programowanie #frontend</h2>
+        <form class="form" id="contactForm" method="post" novalidate action="../send-scripts.php">
+    <div class="form-row">
+        <label for="field-name"></label>
+        <input type="text" name="name" required id="field-name" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" placeholder="Wpisz imię i nazwisko">
     </div>
+    <div class="form-row">
+        <label for="field-email"></label>
+        <input type="email" name="email" required id="field-email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Wpisz e-mail">
+    </div>
+    <div class="form-row">
+        <label for="field-message"></label>
+        <textarea name="message" required data-error="Musisz wypełnić pole" id="field-message" pattern=".+" placeholder="Wpisz treść wiadomości"></textarea>
+    </div>
+    <div class="form-row">
+        <label class="checkbox-cnt">
+            <input type="checkbox" data-error="Musisz wypełnić pole" name="regulation">
+            <i class="state" aria-hidden="true"></i>
+            <span>Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji zamówienia (zgodnie z Ustawą z dnia 29.08.1997 roku o Ochronie Danych Osobowych; tekst jednolity: Dz. U. 2016 r. poz. 922). </span>
+        </label>
+    </div>
+    <div class="form-row">
+        <button type="submit" class="submit-btn">
+            Wyślij
+        </button>
+    </div>
+</form>
+    </div>
+    <div class="tridown"></div>
   </section>
   <footer class="module content">
     <div class="container">
