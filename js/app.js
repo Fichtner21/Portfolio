@@ -77,37 +77,95 @@
   });
 
   var swiper = new Swiper('.swiper-container', {
-          pagination: '.swiper-pagination',
-          paginationClickable: true
-      });
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    pagination: '.swiper-pagination',
+    paginationType: 'bullets',
+    paginationClickable: true
+  });
 
-
+//STARE USTAWIENIE PROGRESS BAR NA EVENT MOUSEMOVE
 var btns = $('.changeBar');
 var bars = $('.progress-bar');
 var allBars = $('.skillsBar');
 
+ if (window.matchMedia("(min-width: 768px)").matches) {
+/* the viewport is at least 400 pixels wide */
+// const images = document.querySelectorAll('.slide-in');
+// const showAfter = 120;
+//
+//     function scrollHappened() {
+//       console.log('funkcja z JavaScript działa');
+//       images.forEach(image => {
+//         const screen = window.innerHeight;
+//         const imageCenter = image.getBoundingClientRect().top + showAfter;
+//         const imageBottom = image.getBoundingClientRect().bottom;
+//
+//         if (imageCenter < screen && imageBottom > 0)
+//           image.classList.add('active');
+//         else
+//           image.classList.remove('active');
+//       });
+//     }
+//
+//     window.addEventListener('scroll', scrollHappened);
+// scrollHappened();
 
 
-  btns.on('mousemove', function(){
+
+function progresBarOnClick(){
+   btns.on('mouseover', function(){
     var dataColor = $(this).data('color');
     var dataWidth = $(this).data('width');
     var dataNr = $(this).data('nr');
-    $('#bar'+dataNr).find('span').removeClass().fadeIn(1000).addClass(dataColor).animate({width: dataWidth});
+    $('#bar'+dataNr).find('span').removeClass().addClass(dataColor).animate({width: dataWidth},1000);
 
     btns.on('click', function(){
-      $('#bar'+dataNr).find('span').animate({width:0});
+      $('#bar'+dataNr).find('span').removeClass(dataColor);
     })
+   });
+ }
+ progresBarOnClick();
+} else {
+/* the viewport is less than 400 pixels wide */
+  function progresBarOnClick(){
+    btns.on('click', function(){
+    var dataColor = $(this).data('color');
+    var dataWidth = $(this).data('width');
+    var dataNr = $(this).data('nr');
+    var iconToResponsive = $('.iconToResponsive');
+    var dataText = $(this).data('text');
+    var textSpan = $('.foo');//$('#foo'+dataNr);
+    var thisBar = $('.foo').show(1000);
+    var c = $(this).find('.foo').show(1000).html(dataText).animate({opacity:'0.7',});
+      console.log(c);
+    $('#bar'+dataNr).find('span').removeClass().addClass(dataColor).animate({width: dataWidth},500);
+      console.log(dataText);
   });
-
-
-
-  btns.on('mousemove', function(){
-    $(this).toggle().addClass('.encion').css({"display": "inline-block" });
-  });
+ }
+ progresBarOnClick();
+}
 
 
 var certificate = $('.skills3').find('img');
 console.log(certificate);
+
+var clicked = false;
+
+certificate.on('click', function(){
+  clicked = true;
+  if(clicked){
+    certificate.toggleClass('cer');
+    certificate.css({
+      "cursor" : "zoom-in",
+    });
+  }else{
+    certificate.css({
+      "cursor" : "zoom-out",
+    });
+  }
+});
+
 // certificate.toggle(function(){
 //   $(this).css({
 //     "transform": "scale(1.35)",
@@ -119,38 +177,6 @@ console.log(certificate);
 //     })
 //   }
 // })
-
-
-
-      // var form = $('#contactForm');
-      // console.log(form);
-      // var name = $('#nameInput');
-      // console.log(name);
-      // var email = $('#emailInput');
-      // console.log(email);
-      // var message = $('#messageInput');
-      // console.log(message);
-      // var error = $('.error');
-      // console.log(error);
-      // var done = $('.done');
-
-      // var submit = form.find('.submitbtn');
-      // console.log(submit);
-      // submit.on('click', function(){
-      //   console.log('prześlij');
-      //   if(name.val().length <= 5){
-      //     event.preventDefault();
-      //     error.text('Imię i nazwisko są zbyt krótkie.');
-      //   }
-      //   if(email.val().indexOf('@') == -1 || email.val().indexOf('.') == -1){
-      //     event.preventDefault();
-      //     error.text('E-mail jest niepoprawny.');
-      //   }
-      //   if(message.val().length < 10){
-      //     event.preventDefault();
-      //     error.text('Wiadomość nie zawiera conajmniej 10 znaków.');
-      //   }
-      // });
 
     $(function() {
         var $inputs = $('form input[required], form textarea[required], select[required]');
@@ -243,7 +269,7 @@ console.log(certificate);
                             checkFieldsErrors($form.find(ret.errors.join(',')));
                         } else {
                             if (ret.status=='ok') {
-                                $form.replaceWith('<div class="form-send-success"><strong>Wiadomość została wysłana</strong><span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span></div>');
+                                $form.replaceWith('<div class="form-send-success"><strong>Wiadomość została wysłana</strong><span>Dziękuję za kontakt. Postaram się odpowiedzieć jak najszybciej</span></div>');
                             }
                             if (ret.status=='error') {
                                 $submit.after('<div class="send-error">Wysłanie wiadomości się nie powiodło</div>');
