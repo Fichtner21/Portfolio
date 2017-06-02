@@ -1,4 +1,6 @@
 <?php
+require 'PHPMailerAutoload.php';
+
 $mailToSend = 'illusion3@wp.pl';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
@@ -22,35 +24,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (count($errors) > 0) {
         $return['errors'] = $errors;
     } else {
-        $headers  = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=UTF-8'. "\r\n";
-        $headers .= 'From: '.$email."\r\n";
-        $headers .= 'Reply-to: '.$email;
-        $message  = "
-            <html>
-                <head>
-                    <meta charset=\"utf-8\">
-                </head>
-                <style type='text/css'>
-                    body {font-family:sans-serif; color:#222; padding:20px;}
-                    div {margin-bottom:10px;}
-                    .msg-title {margin-top:30px;}
-                </style>
-                <body>
-                    <div>Imię: <strong>$name</strong></div>
-                    <div>Email: <a href=\"mailto:$email\">$email</a></div>
-                    <div class=\"msg-title\"> <strong>Wiadomość:</strong></div>
-                    <div>$message</div>
-                </body>
-            </html>";
 
-        if (mail($mailToSend, 'Wiadomość z efichtner.xyz - ' . date("d-m-Y"), $message, $headers)) {
-            $return['status'] = 'ok';
-        } else {
-            $return['status'] = 'error';
-        }
-    }
+      $mail = new PHPMailer;
 
-    header('Content-Type: application/json');
-    echo json_encode($return);
-}
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.wp.pl';  // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = 'illusion3@wp.pl';                 // SMTP username
+      $mail->Password = '20042004f';                           // SMTP password
+      $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 465;                                    // TCP port to connect to
+      $mail->setFrom('illusion3@wp.pl', 'efichtner.xyz');
+      $mail->addAddress('illusion3@wp.pl');               // Name is optional
+
+      $message  = "
+          <html>
+              <head>
+                  <meta charset=\"utf-8\">
+              </head>
+              <style type='text/css'>
+                  body {font-family:sans-serif; color:#222; padding:20px;}
+                  div {margin-bottom:10px;}
+                  .msg-title {margin-top:30px;}
+              </style>
+              <body>
+                  <div>Imię: <strong>$name</strong></div>
+                  <div>Email: <a href=\"mailto:$email\">$email</a></div>
+                  <div class=\"msg-title\"> <strong>Wiadomość:</strong></div>
+                  <div>$message</div>
+              </body>
+          </html>";
+
+          $mail->isHTML(true);
+          $mail->Subject = 'Wiadomość ze strony efichtner.xyz';
+          $mail->Body    = $message;
+
+          if(!$mail->send()) {
+                      $return['status'] = 'error';
+                      $return['error_info'] = $mail->ErrorInfo;
+          } else {
+                              $return['status'] = 'ok';
+          }
+
+              header('Content-Type: application/json');
+              echo json_encode($return);
+          }
+          }

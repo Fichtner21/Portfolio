@@ -178,6 +178,13 @@ certificate.on('click', function(){
 //   }
 // })
 
+// $(document).bind("ajaxSend", function() {
+//         $('.modal').show();
+//     }).bind("ajaxComplete", function() {
+//         $('.modal').hide();
+//     });
+
+
     $(function() {
         var $inputs = $('form input[required], form textarea[required], select[required]');
 
@@ -239,7 +246,7 @@ certificate.on('click', function(){
             return fieldsAreValid;
         };
 
-        $('.form').on('submit', function(e) {
+        $('#contactForm').on('submit', function(e) {
             e.preventDefault();
 
             var $form = $(this);
@@ -287,4 +294,9 @@ certificate.on('click', function(){
             }
         })
     })
+    $(document).bind("ajaxSend", function() {
+            $('.modal').show();
+        }).bind("ajaxComplete", function() {
+            $('.modal').hide();
+        });
  })(jQuery);
